@@ -23,15 +23,13 @@ If you want to follow the Tutorials by actually executing the code on your compu
 
 After that, to run the tutorials go into the `DL_MIR_Tutorial` folder and start from the command line:
 
-`ipython notebook`
+`ipython notebook` or `jupyter notebook`
 
 Your web browser will open showing a list of files. Start the tutorials one after another by clicking on the following:
 
-1. <b>...</b><br/>
-
-2. <b>Music_speech_classification.ipynb</b><br/>
-   This tutorial shows how music is distinguished from speech, loading audio files into Python and classifying them either into "music" or "speech" using different architectures and parameters of a Convolutional Neural Network. It also includes techniques such as Batch Normalization,
-   ReLU Activation and Dropout.
+<b>Music_genre_classification.ipynb</b><br/>
+   This tutorial shows how music is categorized into 1 of 10 music genres using the GTZAN music collection (see below).
+   It includes audio and data preprocessing for Deep Learning and creating and training different architectures and parameters of a Convolutional Neural Network. It also includes techniques such as Batch Normalization, ReLU Activation and Dropout.
 
 
 # Installation of Pre-requisites
@@ -74,7 +72,7 @@ Install the remaining Python libraries needed:
 Either by:
 
 ```
-sudo pip install Keras==1.2.1 Theano==0.8.2 scikit-learn>=0.17 pandas librosa numpy>=1.10,<1.13
+sudo pip install Keras==1.2.1 Theano==0.8.2 scikit-learn>=0.17 pandas librosa
 ```
 
 or, if you downloaded or cloned this repository, by:
@@ -83,6 +81,17 @@ or, if you downloaded or cloned this repository, by:
 cd DL_MIR_Tutorial
 sudo pip install -r requirements.txt
 ```
+
+### Install MP3 Decoder
+
+If you want to use audio formats other than .wav files (e.g. .mp3, .flac, .au, .mp4), you have to install FFMPEG on you computer:
+
+- Linux: install `ffmpeg`, via `sudo apt-get install ffmpeg`)
+  - for Ubuntu 14.04: see http://fcorti.com/2014/04/22/ffmpeg-ubuntu-14-04-lts
+- Mac: download FFMPeg for Mac: http://ffmpegmac.net or if you use brew, execute: `brew install ffmpeg`
+- Windows: download FFMpeg.exe from https://github.com/tuwien-musicir/rp_extract/blob/master/bin/external/win/ffmpeg.exe
+
+Make sure that the exectuable is in a PATH found by the system.
 
 ## Configure Keras to use Theano
 
@@ -133,7 +142,6 @@ If everything is installed correctly, it should print `Using Theano backend.`<br
 If the GPU is configured correctly, it should also print `Using gpu device 0: GeForce GTX 980 Ti` or similar.
 
 
-
 # Source Credits
 
 ## Python libraries
@@ -151,7 +159,7 @@ The data sets we use in the tutorials are from the following sources:
 by George Tzanetakis
 1000 audio files with 30 sec. each, across 10 music genres, 100 audio files each
 
-* GTZAN music speech data set:
+* GTZAN music speech data set: (currently not used)
 by George Tzanetakis
 Collected for the purposes of music/speech discrimination. 128 tracks, each 30 seconds long. Each class (music or speech) has 64 examples in 22050Hz Mono 16-bit WAV audio format.
 
